@@ -37,7 +37,6 @@ int quicksort(int left,int right)
     a[i] = temp;
     quicksort(left,i-1);
     quicksort(i+1,right);
-
 }
 
 int main()
