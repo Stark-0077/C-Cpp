@@ -36,12 +36,13 @@ int main()
 
     printf("\n");
     // matrix multipulation
-    for(i=1; i <= n; i++)
+    for(i=1; i <= n; i++)    // row of matrix a
     {
-        for(j = 1; j<=q; j++)
+        for(j = 1; j<=q; j++)   //colunm of matrix b
         {
             sum = 0;
-            for(k = 1; k<=m; k++)
+            // m is the column of a as well as the row of b
+            for(k = 1; k<=m; k++)              // due to matrix a b have the common variable "m"
             {
                 sum += a[i][k] * b[k][j];
             }
