@@ -2,7 +2,6 @@
 
 int a[101],n;
 
-
 void quicksort(int left,int right)
 {
     int i,j,t,temp;
