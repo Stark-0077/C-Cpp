@@ -1,4 +1,4 @@
-# one solution using binary search technique
+// one solution using binary search technique
 
 class Solution {
 public:
