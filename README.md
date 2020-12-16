@@ -80,3 +80,11 @@ int main( )
 */
 ```
 
+## 5. 命名空间  
+```
+namespace namespace_name {
+   // 代码声明
+}
+```  
+[Link](https://www.runoob.com/cplusplus/cpp-namespaces.html)
+
