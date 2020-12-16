@@ -86,5 +86,12 @@ namespace namespace_name {
    // 代码声明
 }
 ```  
-[Click this Link to learn more](https://www.runoob.com/cplusplus/cpp-namespaces.html)
+[Click this Link to learn more](https://www.runoob.com/cplusplus/cpp-namespaces.html)  
+
+## 6. C++模板  
+函数模板&类模板
+### 6.1 函数模板  
+
+
+### 6.2 类模板  
 
