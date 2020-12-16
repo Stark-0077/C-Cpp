@@ -45,4 +45,30 @@ Messages may cause receiver to change state or return results
      所有可以接受相同消息的对象，可以被认为是相同的类型.  
 
 
- ## 4. 
+ ## 4. 构造函数和析构函数
+ 
+ 对象的动态内存分配
+```
+#include <iostream>
+using namespace std;
+ 
+class Box
+{
+   public:
+      Box() { 
+         cout << "调用构造函数！" <<endl; 
+      }
+      ~Box() { 
+         cout << "调用析构函数！" <<endl; 
+      }
+};
+ 
+int main( )
+{
+   Box* myBoxArray = new Box[4];
+ 
+   delete [] myBoxArray; // 删除数组
+   return 0;
+}
+```
+
