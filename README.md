@@ -86,5 +86,5 @@ namespace namespace_name {
    // 代码声明
 }
 ```  
-[Link](https://www.runoob.com/cplusplus/cpp-namespaces.html)
+[Click this Link to learn more](https://www.runoob.com/cplusplus/cpp-namespaces.html)
 
