@@ -1,6 +1,11 @@
 # cpp
 Here is my cpp learning content.
 Some knowledge will be recorded.  
+https://zh.cppreference.com/  
+## 1.基本常识  
+Source Files文件夹：放源程序，如 **.cpp**。  
+Resource Files文件夹：放程序里需要的资源文件，如 **图标，对话框，图片等**。  
+Header Files文件夹：放程序的头文件，变量和成员函数的声明,如 **.h**。  
 
 ## 2. 什么是面向对象  
 objects = attributes + services  
@@ -45,9 +50,9 @@ Messages may cause receiver to change state or return results
      所有可以接受相同消息的对象，可以被认为是相同的类型.  
 
 
- ## 4. 构造函数和析构函数
+ ## 4. 构造函数和析构函数 & this  
  
- 对象的动态内存分配
+ **对象的动态内存分配**  
 ```
 #include <iostream>
 using namespace std;
@@ -79,6 +84,17 @@ int main( )
    return 0;
 */
 ```
+**this**  
+http://c.biancheng.net/cpp/biancheng/view/201.html  
+- this 是 C++ 中的一个关键字，也是一个 const 指针，它指向当前对象，通过它可以访问当前对象的所有成员。  
+- C++只能用在类的内部，通过this可以访问类的所有成员，包括private，protected，public属性的。  
+- this 是一个指针，要用->来访问成员变量或成员函数。  
+- this 虽然用在类的内部，但是只有在对象被创建以后才会给 this 赋值，并且这个赋值的过程是编译器自动完成的，不需要用户干预，用户也不能显式地给 this 赋值。  
+- 只有当对象被创建后 this 才有意义，因此不能在 static 成员函数中使用。  
+-  this 实际上是成员函数的一个形参，在调用成员函数时将对象的地址作为实参传递给 this。不过 this 这个形参是隐式的，它并不出现在代码中，而是在编译阶段由编译器默默地将它添加到参数列表中。  
+- this是是 成员函数 和 成员变量 关联的桥梁。  
+
+
 
 ## 5. 命名空间  
 ```
