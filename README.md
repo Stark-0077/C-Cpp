@@ -95,6 +95,60 @@ http://c.biancheng.net/cpp/biancheng/view/201.html
 - **this是 成员函数 和 成员变量 关联的桥梁。**  
 -  this 作为隐式形参，本质上是成员函数的局部变量，所以只能用在成员函数的内部，并且只有在通过对象调用成员函数时才给 this 赋值。  
 
+Header files:
+```
+#pragma once
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Student
+{
+public:
+	void setname(string name);
+	void setage(int age);
+	void setscore(float score);
+	void show();
+private:
+	string name;
+	int age;
+	float score;
+};
+
+```  
+Cpp files For function implementation:  
+```
+#include "../header/This.h"
+
+void Student::setname(string name) {
+	this->name = name;
+}
+void Student::setage(int age) {
+	this->age = age;
+}
+void Student::setscore(float score) {
+	this->score = score;
+}
+void Student::show() {
+	cout << this->name << " 's age is" << this->age << ", grade is " << this->score << endl;
+}
+```
+Main Cpp file For using Class:
+```
+#include "header/This.h"
+
+int main()
+{
+
+	Student *pstu = new Student;
+	pstu->setname("qwer");
+	pstu->setage(16);
+	pstu->setscore(96.5);
+	pstu->show();
+	return 0;
+
+}
+```
 
 
 
