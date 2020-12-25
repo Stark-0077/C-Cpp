@@ -101,7 +101,8 @@ namespace namespace_name {
 - vector vs. array  
   vector 容器与数组相比其优点在于它能够根据需要随时自动调整自身的大小以便容下所要放入的元素  
 - vector 常用的声明及初始化  
-  ```
+  
+ ```
    vector<int> a ; //声明一个int型向量a
 
 vector<int> a(10) ; //声明一个初始大小为10的向量
@@ -111,6 +112,29 @@ vector<int> a(10, 1) ; //声明一个初始大小为10且初始值都为1的向�
 vector<int> b(a) ; //声明并用向量a初始化向量b
 
 vector<int> b(a.begin(), a.begin()+3) ; //将a向量中从第0个到第2个(共3个)作为向量b的初始值  
-  ``` 
+ ``` 
   
+- 输入输出可以像普通数组那样： cin >> a[3]; cout <<a[i]<<endl;  
+- 也可以用迭代器：
+```
+ vector<int>::iterator t ;
+
+for(t=a.begin(); t!=a.end(); t++)
+
+cout<<*t<<" " ;
+```
+- 向量基本操作  
+```
+a.size()   // get the # of elements
+a.empty()  // Judge if vector is empty  
+a.clear()  // clear vector  
+a = b // copy b to a  
+a==b  a!=b   // logic comparsion between two vector  
+a.insert(a.begin(),1000)  // insert 1000 to the start of a  
+a.insert(a.begin(),3,1000)  // insert 1000 to position 0-2  
+vector<int> a(5,1); vector<int> b(10); b.insert(b.begin(),a.begin,a.end());  
+b.erase(b.begin())  // delete the start position of vector  
+b.erase(b.begin(),b.begin()+3);  
+b.swap(a);  // swap vector a and b  
+```
 
