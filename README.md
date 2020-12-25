@@ -92,6 +92,25 @@ namespace namespace_name {
 函数模板&类模板
 ### 6.1 函数模板  
 
-
 ### 6.2 类模板  
+
+
+## 7. vector容器  
+- 属于标准模板库（STL:standard template library）的一种（另外还有string等）。  
+- 使用时要包含头文件 #include<vector>  
+- vector vs. array  
+  vector 容器与数组相比其优点在于它能够根据需要随时自动调整自身的大小以便容下所要放入的元素  
+- vector 常用的声明及初始化  
+  ```
+   vector<int> a ; //声明一个int型向量a
+
+vector<int> a(10) ; //声明一个初始大小为10的向量
+
+vector<int> a(10, 1) ; //声明一个初始大小为10且初始值都为1的向量
+
+vector<int> b(a) ; //声明并用向量a初始化向量b
+
+vector<int> b(a.begin(), a.begin()+3) ; //将a向量中从第0个到第2个(共3个)作为向量b的初始值  
+  ``` 
+  
 
