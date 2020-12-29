@@ -210,3 +210,26 @@ b.erase(b.begin(),b.begin()+3);
 b.swap(a);  // swap vector a and b  
 ```
 
+## const & voliatle 关键字  
+```
+int main()
+{   
+    // cosnt 定义常量
+    const int a = 6;
+    a = 7;    // error; variable a is read-only
+    
+    // 指针使用 const 
+    //  (1) 指针本身是常量
+    int* const b;
+    
+    // （2）指针指向的内容不可变
+    const int* c;
+    
+    //  (3) 指针是常量，指向的内容也不可变
+    const int* const d;
+ 
+    return 0;
+}
+```
+
+
