@@ -27,6 +27,33 @@ a.print();
 A way to organize(design, implementations)  
 Objects, not control or data flow, are primary focus of the design and implemetation  
 
+**使用类的成员变量和成员函数**  
+
+* 方法一： **对象名.成员名**  
+```
+CRectangle r1,r2; 
+r1.w = 5;
+r2.Init(5,5);  
+```
+* 方法二： **指针->成员名** 
+```
+CRectangle *p1 = &r1; 
+p1->w = 5;  
+p1->Init(5,5);
+```
+* 方法三：**引用名.成员名**  
+```
+CRectangle r2;  
+CRectangle &rr = r2;  
+rr.w = 5;  
+rr.Init(5,5);
+// example  
+void PrintRectangle(CRectangle &r)  
+{ cout<< r.Area()<<endl;}
+CRectangle r3;
+r3.Init(5,5);
+PrintRectangle(r3);  
+```
 ## 3.面向对象基本原理  
 - Object send and receive messages(ojects do things)  
 Object send messages:  
@@ -50,7 +77,57 @@ Messages may cause receiver to change state or return results
      所有可以接受相同消息的对象，可以被认为是相同的类型.  
 
 
- ## 4. 构造函数和析构函数 & this  
+ ## 4. 构造函数Constructor和析构函数 & this  
+ 
+ - 目的：执行初始化工作，避免再写初始化函数。有时没对象被初始化就使用，会导致程序出错。  
+ - 实例  
+ ```
+ class Box
+{
+   public:
+      Box() { 
+         cout << "调用构造函数！" <<endl; 
+	 //构造函数可以提醒程序员进行初始化
+      }
+      ~Box() { 
+         cout << "调用析构函数！" <<endl; 
+      }
+};
+ ```  
+- 可以有多个构造函数（函数重载） 
+- 构造函数在数组中的使用  
+```
+class Complex
+{
+    int x;
+	public:  
+	Complex()  
+	{
+	cout<< "Constructor 1 is called"<<endl
+	};
+	Complex(int n)  
+	{
+	x = n;
+	cout<<"Constructor 2 is called"<<endl
+	};
+};  
+//constructor for array  
+Complex array0[2]; 
+// Constructor 1 is called 
+// Constructor 1 is called  
+
+Complex array1[2] = {4,5};
+// Constructor 2 is called  
+// Constructor 2 is called  
+Complex array2[2] = {3};
+//Constructor 2 is called
+//Constructor 1 is called  
+Complex*arrary4 = new Complex[2];
+delete []array4;
+//Constructor 1 is called
+//Constructor 1 is called
+```
+ 
  
  **对象的动态内存分配**  
 ```
@@ -139,7 +216,7 @@ Main Cpp file For using Class:
 
 int main()
 {
-
+	// 
 	Student *pstu = new Student;
 	pstu->setname("qwer");
 	pstu->setage(16);
@@ -231,5 +308,25 @@ int main()
     return 0;
 }
 ```
-
+## inline 内联函数  
+- 设计目的：为了减少函数调用的开销。  
+- 机制：不调用，直接用函数体。（类似是macro）  
+- 实例  
+```
+inline int MAX(int a,int b)
+{
+	if(a>b) return a;
+	return b;
+}
+```  
+## 函数重载  
+- 含义：函数名字相同，参数个数/类型不同。  
+- 机制：编译器通过参数个数/类型来判断调用哪个函数。  
+- 实例  
+```
+int max(double f1,doublef2){}
+int max(int i,int j){}
+int max(int a, int b, int c){}
+```
+- 意义：使得函数命名变得简单。  
 
