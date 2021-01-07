@@ -2,6 +2,7 @@
 Here is my cpp learning content.
 Some knowledge will be recorded.  
 https://zh.cppreference.com/  
+https://interview.huihut.com/#/
 ## 1.基本常识  
 Source Files文件夹：放源程序，如 **.cpp**。  
 Resource Files文件夹：放程序里需要的资源文件，如 **图标，对话框，图片等**。  
@@ -119,9 +120,11 @@ Complex array0[2];
 Complex array1[2] = {4,5};
 // Constructor 2 is called  
 // Constructor 2 is called  
+
 Complex array2[2] = {3};
 //Constructor 2 is called
 //Constructor 1 is called  
+
 Complex*arrary4 = new Complex[2];
 delete []array4;
 //Constructor 1 is called
@@ -147,7 +150,7 @@ class Box
  
 int main( )
 {
-   Box* myBoxArray = new Box[4];
+   Box* myBoxArray = new Box[4];  //指针数组
     // 调用四次
    delete [] myBoxArray; // 删除数组
    return 0;
