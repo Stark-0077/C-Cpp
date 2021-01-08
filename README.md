@@ -78,7 +78,7 @@ Messages may cause receiver to change state or return results
      所有可以接受相同消息的对象，可以被认为是相同的类型.  
 
 
- ## 4. 构造函数Constructor和析构函数 & this  
+ ## 4. 构造函数Constructor和析构函数Destructor & this  
  
  - 目的：执行初始化工作，避免再写初始化函数。有时没对象被初始化就使用，会导致程序出错。  
  - 实例  
@@ -164,6 +164,9 @@ int main( )
    return 0;
 */
 ```
+**复制构造函数**  
+http://c.biancheng.net/view/151.html  
+
 **this**  
 http://c.biancheng.net/cpp/biancheng/view/201.html  
 - this 是 C++ 中的一个关键字，也是一个 const 指针，它指向当前对象，通过它可以访问当前对象的所有成员。  
@@ -332,4 +335,34 @@ int max(int i,int j){}
 int max(int a, int b, int c){}
 ```
 - 意义：使得函数命名变得简单。  
+
+## 静态（static）成员  
+- 目的： 将和某些类紧密相关的全局变量和函数写到类里面，看上去更像一个整体，易于维护，理解。  
+- 普通成员变量 vs 静态成员变量  
+静态成员变量被所有的对象共享。  
+- sizeof不会计算静态成员变量，静态成员不是被放在对象内部的。  
+- 静态成员不需要通过对象就可以访问。  
+- 静态成员变量/函数，本质上是全局变量/函数。  
+
+- 如何访问静态成员？  
+类名::成员名 rectangle::PrintTotal();  
+对象名::成员名 rectangle r; r.PrintTotal();  
+指针->成员名 rectangle* p = &r; p->PrintTotal();  
+引用.成员名 rectangle&ref = r; int n = ref.Num;  
+
+- 使用：  
+在定义类的文件中对静态成员变量进行一次说明/初始化。  
+在静态成员函数中，不能访问非静态成员变量/函数。  
+```
+class rectangle
+{
+private:
+	int w,h;
+	static int Area;	//静态成员变量，如总面积，总数量etc.
+	static int Num;
+public:
+	rectangle(int w_,int h_);
+	~rectangle();
+	static void PrintTotal();	//静态成员函数
+};
 
