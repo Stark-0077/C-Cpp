@@ -8,6 +8,12 @@ Source Files文件夹：放源程序，如 **.cpp**。
 Resource Files文件夹：放程序里需要的资源文件，如 **图标，对话框，图片等**。  
 Header Files文件夹：放程序的头文件，变量和成员函数的声明,如 **.h**。  
 
+**代码规范**  
+- 头文件保护  
+#progma once  
+
+
+
 ## 2. 什么是面向对象  
 objects = attributes + services  
 **An example**:
