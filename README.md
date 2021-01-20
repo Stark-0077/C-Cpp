@@ -376,12 +376,13 @@ public:
 ```
 ## 智能指针(shared_ptr,unique_ptr,weak_ptr)  
 - 目的：因为C++没有自动回收内存的机制，因此每一次new出来的动态内存必须手动delete回去。而智能指针可以解决这个问题。  
+ 内存泄漏的危害是巨大的，它导致可用内存越来越少，甚至拖慢系统，最终进程可能被OOM（out of memory）机制杀死。  
 - 智能指针：自动负责释放所指向的对象，实际上它利用了栈的机制，每一个智能指针都是一个模板类，  
 调用智能指针实际上是创建了一个智能指针的对象，  
 对象生命周期到达尽头的时候，会自动调用智能指针的析构函数，在析构函数里，释放掉它管理的内存，从而避免手动delete。  
 - 三种智能指针：*shared_ptr* 允许多个指针指向同一个对象 *unique_ptr* 独占所指向的对象 *weak_ptr* shared_ptr的弱引用  
-- ![click here to learn more]https://zhuanlan.zhihu.com/p/29628938  
-- ![implementation]https://zhuanlan.zhihu.com/p/344953368
-- ![more]https://mp.weixin.qq.com/s?__biz=MzI2OTA3NTk3Ng==&mid=2649285218&idx=1&sn=dc8fc5f25ce59729101067651c650325&chksm=f2f99105c58e181366dcd1ce1865e97ace103b17f7f25c2ce24cb8151ea6af84596160713cca&scene=21#wechat_redirect  
+- [click here to learn more]https://zhuanlan.zhihu.com/p/29628938  
+- [implementation]https://zhuanlan.zhihu.com/p/344953368
+- [more]https://mp.weixin.qq.com/s?__biz=MzI2OTA3NTk3Ng==&mid=2649285218&idx=1&sn=dc8fc5f25ce59729101067651c650325&chksm=f2f99105c58e181366dcd1ce1865e97ace103b17f7f25c2ce24cb8151ea6af84596160713cca&scene=21#wechat_redirect  
 - 
-
+ 
