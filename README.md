@@ -381,8 +381,8 @@ public:
 调用智能指针实际上是创建了一个智能指针的对象，  
 对象生命周期到达尽头的时候，会自动调用智能指针的析构函数，在析构函数里，释放掉它管理的内存，从而避免手动delete。  
 - 三种智能指针：*shared_ptr* 允许多个指针指向同一个对象 *unique_ptr* 独占所指向的对象 *weak_ptr* shared_ptr的弱引用  
-- [click here to learn more]https://zhuanlan.zhihu.com/p/29628938  
-- [implementation]https://zhuanlan.zhihu.com/p/344953368
-- [more]https://mp.weixin.qq.com/s?__biz=MzI2OTA3NTk3Ng==&mid=2649285218&idx=1&sn=dc8fc5f25ce59729101067651c650325&chksm=f2f99105c58e181366dcd1ce1865e97ace103b17f7f25c2ce24cb8151ea6af84596160713cca&scene=21#wechat_redirect  
+- [click here to learn more](https://zhuanlan.zhihu.com/p/29628938)  
+- [implementation](https://zhuanlan.zhihu.com/p/344953368)
+- [more](https://mp.weixin.qq.com/s?__biz=MzI2OTA3NTk3Ng==&mid=2649285218&idx=1&sn=dc8fc5f25ce59729101067651c650325&chksm=f2f99105c58e181366dcd1ce1865e97ace103b17f7f25c2ce24cb8151ea6af84596160713cca&scene=21#wechat_redirect)  
 - 
  
