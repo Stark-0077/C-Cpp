@@ -385,4 +385,32 @@ public:
 - [implementation](https://zhuanlan.zhihu.com/p/344953368)
 - [more](https://mp.weixin.qq.com/s?__biz=MzI2OTA3NTk3Ng==&mid=2649285218&idx=1&sn=dc8fc5f25ce59729101067651c650325&chksm=f2f99105c58e181366dcd1ce1865e97ace103b17f7f25c2ce24cb8151ea6af84596160713cca&scene=21#wechat_redirect)  
 - 
+
+
+## ++i和i++  
+```
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout << "Hello, world!" << endl;
+	int i = 0;
+	int a = i++;
+	cout<< a <<endl;
+	i = 0;
+	int b = ++i;
+	cout<< b <<endl;
+    return 0;
+}
+```  
+output  
+```
+Hello, world!
+0
+1
+```  
+说明：  
+a = i++; 先赋值i给a，再自加  
+b = ++i; 先自加，再赋值给b  
+
  
