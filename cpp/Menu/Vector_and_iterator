@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+int main()
+{
+  // initialization of vector
+ 	vector<int> nums(3,-1);
+	vector<vector<int>> matrix{5,vector<int>{1,2,3}};
+  
+  // iterator
+	vector<int>::iterator iter = nums.begin();
+  // const_iterator: read_only
+	vector<int>::const_iterator iterator_read_only = nums.begin();
+	
+	for(vector<int>::size_type ix = 0; ix!=nums.size();++ix)
+	{
+		nums[ix] = ix;
+	}
+	bool empty_or_not = nums.empty();
+	cout << empty_or_not <<endl<<endl;
+	nums.push_back(69);
+	for(vector<int>::size_type ix = 0; ix!=nums.size();++ix)
+	{
+		cout << nums[ix]<<endl;
+	}
+	cout<<endl;
+	
+	for(vector<int>::iterator iter = nums.begin(); iter!=nums.end();++iter)
+	{
+		cout << *iter <<endl;
+	}
+	
+	cout<<endl;
+	
+	for(vector<int>::iterator iterator_read_only = nums.begin(); iterator_read_only!=nums.end();++iterator_read_only)
+	{
+		cout << *iterator_read_only <<endl;
+		
+	}
+	//error: const_iterator is read-only
+	*iterator_read_only = 333;
+	
+    return 0;
+}
