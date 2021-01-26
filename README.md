@@ -280,11 +280,14 @@ vector<int> b(a.begin(), a.begin()+3) ; //将a向量中从第0个到第2个(共3
 - 输入输出可以像普通数组那样： cin >> a[3]; cout <<a[i]<<endl;  
 - 也可以用迭代器：
 ```
- vector<int>::iterator t ;
+ vector<int>::iterator iter ;
 
-for(t=a.begin(); t!=a.end(); t++)
+for(t=a.begin(); iter !=a.end(); t++)
 
-cout<<*t<<" " ;
+cout<<*iter <<" " ;
+
+// vector<int>::const_iterator iter_read_only;
+// Read Only Iterator
 ```
 - 向量基本操作  
 ```
