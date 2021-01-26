@@ -171,7 +171,9 @@ int main( )
 */
 ```
 **复制构造函数**  
-http://c.biancheng.net/view/151.html  
+http://c.biancheng.net/view/151.html   
+- Def:复制构造函数是构造函数的一种，也称拷贝构造函数，它只有一个参数，参数类型是本类的引用。  
+- 如果编写了复制构造函数，则默认复制构造函数就不存在了。  
 
 **this**  
 http://c.biancheng.net/cpp/biancheng/view/201.html  
