@@ -1,5 +1,7 @@
 // cpp中字符串操作 string
 
+// 双指针的方法
+
 class Solution {
 public:
     string replaceSpace(string s) {
