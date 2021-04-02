@@ -457,3 +457,33 @@ int main()
 }	
 
 ```
+
+## Cpp--stack（栈）  
+```
+stack<int> s;
+stack<string>s2;
+
+// s is empty -> true;   else -> false
+s.empty()
+s.size()
+s.pop() //删除栈顶元素但不返回其值  
+s.top() //返回顶部元素但不删除其值  
+s.push()  //在栈顶压入新的元素
+```
+
+
+## Cpp- queue(队列)  
+```
+queue<int> q;
+
+q.empty()
+q.size()
+q.pop()    // 删除队列首元素但不返回其值  
+q.front()  //返回 队首 元素的值，但不删除该元素
+q.push(??)   //队尾压入新的元素
+q.back()   // 返回 队尾 元素的值，但不删除该元素
+```
+
+
+
+
