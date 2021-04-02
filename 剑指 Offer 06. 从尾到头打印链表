@@ -1,0 +1,64 @@
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+ 
+// 方法一： 用reverse方法（调库）
+class Solution {
+public:
+    vector<int> res;
+    vector<int> reversePrint(ListNode* head) {
+        // head != nullptr
+        while(head){  
+        res.push_back(head->val);
+            head = head->next;
+        }
+        //使用algorithm算法中的reverse反转res
+        reverse(res.begin(),res.end());
+        return res;
+    }
+};
+
+//方法二： 用栈stack的方法
+class Solution {
+public:
+    
+    vector<int> reversePrint(ListNode* head) {
+    
+    stack<int> med;
+    vector<int> res;
+    while(head){
+        med.push(head->val);
+        head = head->next;
+    }
+
+    while(!med.empty())
+    {
+        res.push_back(med.top());
+        med.pop();
+    }
+    return res;
+    }
+};
+
+// 方法三： 递归的方法
+
+class Solution {
+public:
+    vector<int> res;
+    vector<int> reversePrint(ListNode* head) {
+
+        if(head == nullptr)
+        return res;
+
+        reversePrint(head->next);
+        res.push_back(head->val);
+        return res;
+
+    }
+};
