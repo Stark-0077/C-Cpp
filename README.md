@@ -484,6 +484,35 @@ q.push(??)   //队尾压入新的元素
 q.back()   // 返回 队尾 元素的值，但不删除该元素
 ```
 
+## C++ lambda expression  
+1. Why Lambda?  
+匿名函数是许多编程语言都支持的概念，有函数体，没有函数名。  
+c++引入了lambda 函数，你可以在你的源码中内联一个lambda函数，这就使得创建快速的，一次性的函数变得简单了。  
+
+2. Expression: [capture](parameters)->return-type {body}  
+```
+[capture]: 捕获说明符，表示一个lambda函数的开始  
+(parameters): 匿名函数lambda的参数列表  
+-> return-type: 返回类型；若无返回类型，可省略  
+
+auto func = [] () { cout << "hello,world"; };  
+func(); // now call the function  
+```
+
+3. closure(闭包)  
+lambda函数能够捕获lambda函数外的具有自动存储时期的变量。函数体与这些变量的集合合起来叫闭包。  
+```
+[] 不截取任何变量
+[&} 截取外部作用域中所有变量，并作为引用在函数体中使用
+[=] 截取外部作用域中所有变量，并拷贝一份在函数体中使用
+[=, &foo] 截取外部作用域中所有变量，并拷贝一份在函数体中使用，但是对foo变量使用引用
+[bar] 截取bar变量并且拷贝一份在函数体重使用，同时不截取其他变量
+[x, &y] x按值传递，y按引用传递
+[this] 截取当前类中的this指针。如果已经使用了&或者=就默认添加此选项。
+```  
+
+
+
 
 
 
